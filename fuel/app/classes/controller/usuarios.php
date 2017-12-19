@@ -52,7 +52,7 @@ class Controller_Users extends Controller_Rest
             {
                 $json = $this->response(array(
                     'code' => 400,
-                    'message' => 'parametro incorrecto, se necesita el nombre y la contraseña'
+                    'message' => 'parametro incorrecto, se necesita el nombre y la contraseña',
                 ));
 
                 return $json;
@@ -86,10 +86,7 @@ class Controller_Users extends Controller_Rest
                 'message' => 'usuario creado',
                 'name' => $input['name']
             ));
-            }else{
-                $this->createResponse(400, 'El usuario no existe');          
-                return $json;
-            } 
+            
         }
         catch (Exception $e){
             $json = $this->response(array(
