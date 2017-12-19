@@ -10,6 +10,7 @@ class Usuarios
             'id' => array('type' => 'int', 'constraint' => 11, 'autos_increment' => true),
             'nombre' => array('type' => 'varchar', 'constraint' => 100),
             'contraseña' => array('type' => 'varchar', 'constraint' => 100),
+            'email' => array('type' => 'varchar', 'constraint' => 100),
         ), array('id'));
     }
 

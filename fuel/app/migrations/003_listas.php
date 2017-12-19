@@ -8,8 +8,7 @@ class Listas
     {
         \DBUtil::create_table('listas', array(
             'id' => array('type' => 'int', 'constraint' => 11, 'autos_increment' => true),
-            'nombre' => array('type' => 'varchar', 'constraint' => 100),
-            'contraseña' => array('type' => 'varchar', 'constraint' => 100),
+            'titulo' => array('type' => 'varchar', 'constraint' => 100),
             'id_usuario' => array('type' => 'int', 'constraint' => 11),
         ), 
 
