@@ -1,8 +1,10 @@
 <?php 
 
 use Firebase\JWT\JWT;
+
 class Controller_Users extends Controller_Rest
 {
+
     private $key = 'ifwueFewFWJfwopifh6854fwFWEFJweiofkweff5e4f';
     
     public function post_create()
@@ -12,7 +14,7 @@ class Controller_Users extends Controller_Rest
             {
                 $json = $this->response(array(
                     'code' => 400,
-                    'message' => 'parametro incorrecto, se necesita el nombre y la contraseña'
+                    'message' => 'parametro incorrecto, se necesita el nombre y la contraseña',
                 ));
 
                 return $json;
@@ -48,7 +50,7 @@ class Controller_Users extends Controller_Rest
     public function get_login()
     {
         try {
-            if ( ! isset($_POST['name']) || $_POST['name'] == "" || ! isset($_POST['pass']) || $_POST['pass'] == "" 
+            if ( ! isset($_POST['name']) || $_POST['name'] == "" || ! isset($_POST['pass']) || $_POST['pass'] == "")
             {
                 $json = $this->response(array(
                     'code' => 400,
@@ -71,21 +73,22 @@ class Controller_Users extends Controller_Rest
 
             if($registeredUser != null){ 
             
-            $time = time();
-            $token = array(
-                'iat' => $time, 
-                'data' => [ 
-                    'id' => $registeredUser['id'],
-                    'nombre' => $nombre,
-                    'contraseña' => $contraseña
-                ]
-            );
-            $jwt = JWT::encode($token, $this->$key);
-            $json = $this->response(array(
-                'code' => 200,
-                'message' => 'usuario creado',
-                'name' => $input['name']
-            ));
+                $time = time();
+                $token = array(
+                    'iat' => $time, 
+                    'data' => [ 
+                        'id' => $registeredUser['id'],
+                        'nombre' => $nombre,
+                        'contraseña' => $contraseña
+                    ]
+                );
+                $jwt = JWT::encode($token, $this->$key);
+                $json = $this->response(array(
+                    'code' => 200,
+                    'message' => 'usuario creado',
+                    'name' => $input['name']
+                ));
+            }   
             
         }
         catch (Exception $e){
@@ -121,7 +124,7 @@ class Controller_Users extends Controller_Rest
                     $json = $this->response(array(
                         'code' => 200,
                         'message' => 'usuario borrado',
-                        'name' => $user->nombre;
+                        'name' => $user->nombre,
                      ));
 
                     return $json;
@@ -129,7 +132,7 @@ class Controller_Users extends Controller_Rest
                    $json = $this->response(array(
                         'code' => 400,
                         'message' => 'usuario no borrado',
-                        'name' => $user->nombre;
+                        'name' => $user->nombre,
                     ));
 
                  return $json;
@@ -162,13 +165,15 @@ class Controller_Users extends Controller_Rest
                     $user->contraseña = $nuevaContraseña;
                     $user->save();
 
-            $json = $this->response(array(
-                'code' => 200,
-                'message' => 'usuario editado',
-                'name' => $user->nombre;
-            ));
+                    $json = $this->response(array(
+                        'code' => 200,
+                        'message' => 'usuario editado',
+                        'name' => $user->nombre,
+                    ));
 
-            return $json;
+                    return $json;
+                }
+            }
         }
         catch (Exception $e) 
         {
@@ -198,3 +203,6 @@ class Controller_Users extends Controller_Rest
         }
     }
 }
+
+
+
