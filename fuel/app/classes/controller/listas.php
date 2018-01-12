@@ -2,7 +2,7 @@
 
 use Firebase\JWT\JWT;
 
-class Controller_Lists extends Controller_Rest
+class Controller_Listas extends Controller_Rest
 {
     private $key = 'ifwueFewFWJfwopifh6854fwFWEFJweiofkweff5e4f';
     

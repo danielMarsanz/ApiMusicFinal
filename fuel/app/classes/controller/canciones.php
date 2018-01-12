@@ -2,7 +2,7 @@
 
 use Firebase\JWT\JWT;
 
-class Controller_Songs extends Controller_Rest
+class Controller_Canciones extends Controller_Rest
 {
     private $key = 'ifwueFewFWJfwopifh6854fwFWEFJweiofkweff5e4f';
     

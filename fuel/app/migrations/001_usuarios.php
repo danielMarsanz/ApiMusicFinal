@@ -11,11 +11,12 @@ class Usuarios
             'nombre' => array('type' => 'varchar', 'constraint' => 100),
             'contraseña' => array('type' => 'varchar', 'constraint' => 100),
             'email' => array('type' => 'varchar', 'constraint' => 100),
-        ), array('id'));
-    }
+
+        ), array('id'));                                                    
+    }                                             
 
     function down()
     {
-       \DBUtil::drop_table('usuarios');
+       \DBUtil::drop_table('usuarios');                  
     }
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

@@ -2,7 +2,7 @@
 
 use Firebase\JWT\JWT;
 
-class Controller_Users extends Controller_Rest
+class Controller_Usuarios extends Controller_Rest
 {
 
     private $key = 'ifwueFewFWJfwopifh6854fwFWEFJweiofkweff5e4f';
@@ -59,7 +59,6 @@ class Controller_Users extends Controller_Rest
 
                 return $json;
             }
-
             
             $nombre = $_GET['name'];
             $contraseña = $_GET['pass'];
