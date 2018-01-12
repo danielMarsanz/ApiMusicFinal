@@ -6,10 +6,14 @@ return array(
     array(
       'default' => 
       array(
-        0 => '001_usuarios',
-        1 => '002_canciones',
-        2 => '003_listas',
-        3 => '004_contienen',
+        0 => '001_roles',
+        1 => '002_privacidad',
+        2 => '003_usuarios',
+        3 => '004_canciones',
+        4 => '005_listas',
+        5 => '006_contienen',
+        6 => '007_noticias',
+        7 => '008_siguen',
       ),
     ),
     'module' => 

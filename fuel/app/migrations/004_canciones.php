@@ -11,6 +11,7 @@ class Canciones
             'titulo' => array('type' => 'varchar', 'constraint' => 100),
             'artista' => array('type' => 'varchar', 'constraint' => 100),
             'url' => array('type' => 'varchar', 'constraint' => 100),
+            'reproducciones' => array('type' => 'varchar', 'constraint' => 100),
         ), array('id'));
     }
 
